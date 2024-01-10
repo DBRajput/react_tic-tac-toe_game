@@ -1,15 +1,16 @@
-import logo from './logo.svg';
+import logo from './tic-tac-toe.png';
 import './App.css';
 import { useState } from 'react';
 
 function Square({value}) {
   const[val,setVal] = useState(null);
   function handleClick() {
-    setVal('X');
+    setVal(value);
   }
   return (
     <>
-      <button className='Square' onClick={handleClick}>{val}</button>
+      {/* <button style={{height: '60px', width : '60px'}} onClick={handleClick}>{val}</button> */}
+      <button className='btn' onClick={handleClick}>{val}</button>
     </>
   )
 }
@@ -38,10 +39,12 @@ function App() {
   return (
     <div className="App" style={{backgroundColor:'#282c34'}}>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" style={{height:'200px', width:'200px'}} />
+        <img src={logo} className="App-logo" alt="logo" style={{height:'150px', width:'150px'}} />
         <h3>React Tic-Tac-Toe Game</h3>
       </header>
-      <Board />
+      <div className="Game-Board">
+        <Board/>
+      </div>
     </div>
   );
 }
